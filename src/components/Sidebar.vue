@@ -6,27 +6,54 @@ import SidebarProfile from "~/components/SidebarProfile.vue";
 <template>
 
   <el-menu
-    default-active="2"
+    default-active="1"
     class="el-menu-vertical-demo"
     h-f
   >
-    <el-menu-item index="1" class="h-fit">
+    <el-menu-item class="h-fit">
       <sidebar-profile />
     </el-menu-item>
 
-    <el-menu-item index="2">
-      <el-icon><IconMenu /></el-icon>
-      <template #title>Navigator Two</template>
+    <el-menu-item index="1">
+      <el-icon><House /></el-icon>
+      <template #title>主页</template>
     </el-menu-item>
 
-    <el-menu-item index="3" disabled>
-      <el-icon><Document /></el-icon>
-      <template #title>Navigator Three</template>
+    <el-menu-item index="2">
+      <el-icon><User /></el-icon>
+      <template #title>关于我们</template>
+    </el-menu-item>
+
+    <el-menu-item index="3">
+      <el-icon><Clock /></el-icon>
+      <template #title>历史</template>
     </el-menu-item>
 
     <el-menu-item index="4">
-      <el-icon><Setting /></el-icon>
-      <template #title>Navigator Four</template>
+      <el-icon><Picture /></el-icon>
+      <template #title>精彩截图</template>
+    </el-menu-item>
+
+    <el-tooltip content="计划中(s∞n)" placement="right">
+    <el-menu-item index="5" disabled>
+      <el-icon><Location /></el-icon>
+      <template #title>在线地图</template>
+    </el-menu-item>
+    </el-tooltip>
+
+    <el-menu-item index="6">
+      <el-icon><Download /></el-icon>
+      <template #title>资源下载</template>
+    </el-menu-item>
+
+    <el-menu-item index="7">
+      <el-icon><Star /></el-icon>
+      <template #title>友情链接</template>
+    </el-menu-item>
+
+    <el-menu-item index="8">
+      <el-icon><Present /></el-icon>
+      <template #title>捐助服务器</template>
     </el-menu-item>
   </el-menu>
 </template>
