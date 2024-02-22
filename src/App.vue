@@ -1,10 +1,12 @@
 <script setup lang="ts">
 
-import {computed, ref} from "vue";
+import {computed, ref, Ref} from "vue";
 
 import {Menu} from "@element-plus/icons-vue";
 
 import sidebar from "~/components/Sidebar.vue";
+
+import {Homo, AmongUs} from "~/components/ROA/ROA";
 
 /**
  * 页面宽度
@@ -25,7 +27,7 @@ const mainViewWidth = computed(() =>{
 /**
  * 应该收起侧边栏的页面宽度
  */
-const hideSidebarWidthPx = ref(1000)
+const hideSidebarWidthPx: Ref<number> = ref(1000)
 
 const shouldSidebarHide = computed(() => {
   return windowWidth.value <= hideSidebarWidthPx.value;
@@ -62,6 +64,8 @@ function triggerHideSidebar() {
       @click="triggerHideSidebar"
       title="[switch sidebar]"
   />
+  <el-backtop :right="50" :bottom="50" />
+
 
   <transition appear name="slide-in-left">
   <sidebar
@@ -83,15 +87,22 @@ function triggerHideSidebar() {
   <el-container class="box-border">
     <div v-if="!shouldSidebarHide" class="w-200px h-100vh" />
 
-    <el-scrollbar class="of-overlay ani_slide_from_left" :style="mainViewWidth">
-    <main class="w-f h-100vh p-10 scroll-smooth text-center">
-      {{windowWidth}}
-
-      <div v-for="item in 100" class="w-300px h-400px mx-a my-5 bg-gray">
-        {{item}}
+    <el-container
+        direction="vertical"
+        class="w-f ani_slide_from_left"
+        :style="mainViewWidth"
+    >
+      <div class=" h-100vh mx-a content-center">
+        <homo
+            :window-width="windowWidth"
+            @get-title-width="(titleWidth: number) => {
+              hideSidebarWidthPx = titleWidth + 200
+            }"
+        />
       </div>
-    </main>
-    </el-scrollbar>
+
+      <among-us />
+    </el-container>
   </el-container>
 </template>
 

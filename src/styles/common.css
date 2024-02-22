@@ -1,3 +1,8 @@
+.bg-blur {
+  backdrop-filter: blur(1rem);
+  background: #fff3;
+}
+
 * {
     box-sizing: border-box;
 }

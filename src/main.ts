@@ -32,6 +32,9 @@ import * as ElementPlusIconsVue from '@element-plus/icons-vue'
 // ElementPlus transports fade/zoom
 import 'element-plus/theme-chalk/base.css'
 
+import Vue from 'vue'
+import VueTypedJs from 'vue-typed-js'
+
 // custom transports
 import '~/styles/transition.css'
 
@@ -46,5 +49,7 @@ for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
 app.component('IconMenu', ElementPlusIconsVue["Menu"])
 
 app.use(ElementPlus);
+
+app.use(VueTypedJs)
 
 app.mount("#app");

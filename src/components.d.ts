@@ -7,7 +7,9 @@ export {}
 
 declare module 'vue' {
   export interface GlobalComponents {
+    AmongUs: typeof import('./components/ROA/AmongUs.vue')['default']
     ElAvatar: typeof import('element-plus/es')['ElAvatar']
+    ElBacktop: typeof import('element-plus/es')['ElBacktop']
     ElButton: typeof import('element-plus/es')['ElButton']
     ElContainer: typeof import('element-plus/es')['ElContainer']
     ElIcon: typeof import('element-plus/es')['ElIcon']
@@ -20,7 +22,10 @@ declare module 'vue' {
     ElScrollbar: typeof import('element-plus/es')['ElScrollbar']
     ElSpace: typeof import('element-plus/es')['ElSpace']
     ElSubMenu: typeof import('element-plus/es')['ElSubMenu']
+    ElTe: typeof import('element-plus/es')['ElTe']
+    ElText: typeof import('element-plus/es')['ElText']
     ElTooltip: typeof import('element-plus/es')['ElTooltip']
+    Homo: typeof import('./components/ROA/Homo.vue')['default']
     Sidebar: typeof import('./components/Sidebar.vue')['default']
     SideBar: typeof import('./components/SideBar.vue')['default']
     SidebarProfile: typeof import('./components/SidebarProfile.vue')['default']
