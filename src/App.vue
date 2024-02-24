@@ -54,12 +54,14 @@ function triggerHideSidebar() {
 </script>
 
 <template>
+  <transition appear name="el-fade-in">
   <el-image
       src="/image/ROA_NewYear.jpg"
       class="fixed h-100vh w-100vw z--1"
       fit="cover"
       title="[background image]"
   />
+  </transition>
 
   <el-button
       v-show="shouldSidebarHide"
@@ -92,6 +94,7 @@ function triggerHideSidebar() {
   <el-container class="box-border">
   <div v-if="!shouldSidebarHide" class="w-200px h-100vh" />
 
+  <transition appear name="el-fade-in">
   <div
       class="ani_slide_from_left h-100vh of-y-scroll scroll-smooth"
       :style="mainViewWidth"
@@ -115,7 +118,7 @@ function triggerHideSidebar() {
     />
 
     <among-us />
-  </div>
+  </div></transition>
   </el-container>
 </template>
 

@@ -1,4 +1,6 @@
 <script setup lang="ts">
+// import {toggleDark} from "~/composables";
+
 import SidebarProfile from "~/components/SidebarProfile.vue";
 
 </script>
@@ -8,7 +10,7 @@ import SidebarProfile from "~/components/SidebarProfile.vue";
   <el-menu
     router
     default-active="1"
-    class="el-menu-vertical-demo h-full"
+    class="h-full"
   >
     <el-menu-item class="h-fit">
       <sidebar-profile />
@@ -59,6 +61,17 @@ import SidebarProfile from "~/components/SidebarProfile.vue";
       <el-icon><Present /></el-icon>
       <template #title>捐助服务器</template>
     </el-menu-item>
+
+<!--    <div class="flex-grow" />-->
+
+<!--    <el-menu-item index="10" @click="toggleDark()">-->
+<!--      <button-->
+<!--        class="border-none w-full bg-transparent cursor-pointer"-->
+<!--        style="height: var(&#45;&#45;el-menu-item-height)"-->
+<!--      >-->
+<!--        <i class="inline-flex" i="ep-moon ep-sunny" />-->
+<!--      </button>-->
+<!--    </el-menu-item>-->
   </el-menu>
 </template>
 

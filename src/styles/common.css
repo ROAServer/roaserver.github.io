@@ -1,6 +1,6 @@
 .bg-blur {
   backdrop-filter: blur(0.7rem);
-  background: #fff3;
+  background: var(--el-text-color-primary)+'33';
 }
 
 ::-webkit-scrollbar {
