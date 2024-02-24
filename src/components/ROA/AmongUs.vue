@@ -4,7 +4,7 @@
 
 <template>
   <div
-      class=" w-90% h-100rem"
+      class="w-90% h-40rem mx-a my-5 bg-blur"
   >
 
   </div>

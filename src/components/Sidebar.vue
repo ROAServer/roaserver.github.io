@@ -6,18 +6,22 @@ import SidebarProfile from "~/components/SidebarProfile.vue";
 <template>
 
   <el-menu
+    router
     default-active="1"
-    class="el-menu-vertical-demo"
-    h-f
+    class="el-menu-vertical-demo h-full"
   >
     <el-menu-item class="h-fit">
       <sidebar-profile />
     </el-menu-item>
 
-    <el-menu-item index="1">
+<!--    <el-link href="#home" class="w-full">-->
+    <a href="#home">
+    <el-menu-item index="1" class="w-full">
       <el-icon><House /></el-icon>
       <template #title>主页</template>
     </el-menu-item>
+    </a>
+<!--    </el-link>-->
 
     <el-menu-item index="2">
       <el-icon><User /></el-icon>

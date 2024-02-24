@@ -2,7 +2,7 @@
 
 import {computed, ref, Ref} from "vue";
 
-import {Menu} from "@element-plus/icons-vue";
+import {ArrowUpBold, Menu} from "@element-plus/icons-vue";
 
 import sidebar from "~/components/Sidebar.vue";
 
@@ -12,6 +12,11 @@ import {Homo, AmongUs} from "~/components/ROA/ROA";
  * 页面宽度
  */
 const windowWidth = ref(document.documentElement.clientWidth)
+
+/**
+ * 页面高度
+ */
+const  windowHeight = ref(document.documentElement.clientHeight)
 
 /**
  * 主页面宽度
@@ -33,10 +38,12 @@ const shouldSidebarHide = computed(() => {
   return windowWidth.value <= hideSidebarWidthPx.value;
 })
 
-const isSidebarHide = ref(shouldSidebarHide.value)
+const isSidebarHide = ref(!shouldSidebarHide.value)
 
 window.onresize = () => {
   windowWidth.value = document.documentElement.clientWidth
+  windowHeight.value = document.documentElement.clientHeight
+  console.log('window: ' + windowWidth.value + ', ' + windowHeight.value)
   isSidebarHide.value = shouldSidebarHide.value
 }
 
@@ -64,8 +71,6 @@ function triggerHideSidebar() {
       @click="triggerHideSidebar"
       title="[switch sidebar]"
   />
-  <el-backtop :right="50" :bottom="50" />
-
 
   <transition appear name="slide-in-left">
   <sidebar
@@ -76,33 +81,41 @@ function triggerHideSidebar() {
   </transition>
 
   <transition appear name="el-fade-in-linear">
-    <div
-        v-show="shouldSidebarHide && !isSidebarHide"
-        class="fixed z-1 w-100vw h-100vh"
-        style="background: #fffa"
-        @click="triggerHideSidebar"
-    />
+  <div
+      v-show="shouldSidebarHide && !isSidebarHide"
+      class="fixed z-1 w-100vw h-100vh"
+      style="background: #fffa"
+      @click="triggerHideSidebar"
+  />
   </transition>
 
   <el-container class="box-border">
-    <div v-if="!shouldSidebarHide" class="w-200px h-100vh" />
+  <div v-if="!shouldSidebarHide" class="w-200px h-100vh" />
 
-    <el-container
-        direction="vertical"
-        class="w-f ani_slide_from_left"
-        :style="mainViewWidth"
-    >
-      <div class=" h-100vh mx-a content-center">
-        <homo
-            :window-width="windowWidth"
-            @get-title-width="(titleWidth: number) => {
-              hideSidebarWidthPx = titleWidth + 200
-            }"
-        />
-      </div>
+  <div
+      class="ani_slide_from_left h-100vh of-y-scroll scroll-smooth"
+      :style="mainViewWidth"
+  >
+    <a href="#home">
+    <el-button
+      circle
+      size="large"
+      type="primary"
+      :icon="ArrowUpBold"
+      class="fixed right-8 bottom-8 z-2"
+      title="[to top]"
+    /></a>
 
-      <among-us />
-    </el-container>
+    <homo
+        id="home"
+        :window-width="windowWidth"
+        @get-title-width="(titleWidth: number) => {
+          hideSidebarWidthPx = titleWidth + 200
+        }"
+    />
+
+    <among-us />
+  </div>
   </el-container>
 </template>
 
