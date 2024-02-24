@@ -92,7 +92,10 @@ function triggerHideSidebar() {
   </transition>
 
   <el-container class="box-border">
-  <div v-if="!shouldSidebarHide" class="w-200px h-100vh" />
+  <div
+      v-if="!shouldSidebarHide"
+      class="w-200px h-100vh"
+  />
 
   <transition appear name="el-fade-in">
   <div

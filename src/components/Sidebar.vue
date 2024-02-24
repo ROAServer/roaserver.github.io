@@ -11,6 +11,7 @@ import SidebarProfile from "~/components/SidebarProfile.vue";
     router
     default-active="1"
     class="h-full"
+    style="background-color: #141414"
   >
     <el-menu-item class="h-fit">
       <sidebar-profile />
