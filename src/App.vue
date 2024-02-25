@@ -2,7 +2,7 @@
 
 import {computed, ref, Ref} from "vue";
 
-import {ArrowUpBold, Menu} from "@element-plus/icons-vue";
+import {Menu} from "@element-plus/icons-vue";
 
 import sidebar from "~/components/Sidebar.vue";
 
@@ -38,12 +38,11 @@ const shouldSidebarHide = computed(() => {
   return windowWidth.value <= hideSidebarWidthPx.value;
 })
 
-const isSidebarHide = ref(!shouldSidebarHide.value)
+const isSidebarHide = ref(shouldSidebarHide.value)
 
 window.onresize = () => {
   windowWidth.value = document.documentElement.clientWidth
   windowHeight.value = document.documentElement.clientHeight
-  console.log('window: ' + windowWidth.value + ', ' + windowHeight.value)
   isSidebarHide.value = shouldSidebarHide.value
 }
 
@@ -82,14 +81,12 @@ function triggerHideSidebar() {
   />
   </transition>
 
-  <transition appear name="el-fade-in-linear">
+  <transition appear name="el-fade-in">
   <div
       v-show="shouldSidebarHide && !isSidebarHide"
-      class="fixed z-1 w-100vw h-100vh"
-      style="background: #fffa"
+      class="fixed z-1 w-100vw h-100vh bg-blur"
       @click="triggerHideSidebar"
-  />
-  </transition>
+  /></transition>
 
   <el-container class="box-border">
   <div
@@ -97,20 +94,11 @@ function triggerHideSidebar() {
       class="w-200px h-100vh"
   />
 
-  <transition appear name="el-fade-in">
+<!--  <transition appear name="el-fade-in">-->
   <div
       class="ani_slide_from_left h-100vh of-y-scroll scroll-smooth"
       :style="mainViewWidth"
   >
-    <a href="#home">
-    <el-button
-      circle
-      size="large"
-      type="primary"
-      :icon="ArrowUpBold"
-      class="fixed right-8 bottom-8 z-2"
-      title="[to top]"
-    /></a>
 
     <homo
         id="home"
@@ -120,8 +108,10 @@ function triggerHideSidebar() {
         }"
     />
 
-    <among-us />
-  </div></transition>
+    <among-us
+        id="about-us"
+    />
+  </div>
   </el-container>
 </template>
 

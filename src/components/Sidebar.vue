@@ -10,26 +10,26 @@ import SidebarProfile from "~/components/SidebarProfile.vue";
   <el-menu
     router
     default-active="1"
-    class="h-full"
-    style="background-color: #141414"
+    class="h-full bg-blur"
   >
-    <el-menu-item class="h-fit">
+    <el-scrollbar>
+    <el-menu-item class="h-fit b-b-solid b-b b-#555">
       <sidebar-profile />
     </el-menu-item>
 
-<!--    <el-link href="#home" class="w-full">-->
     <a href="#home">
     <el-menu-item index="1" class="w-full">
       <el-icon><House /></el-icon>
       <template #title>主页</template>
     </el-menu-item>
     </a>
-<!--    </el-link>-->
 
+    <a href="#about-us">
     <el-menu-item index="2">
       <el-icon><User /></el-icon>
       <template #title>关于我们</template>
     </el-menu-item>
+    </a>
 
     <el-menu-item index="3">
       <el-icon><Clock /></el-icon>
@@ -73,6 +73,7 @@ import SidebarProfile from "~/components/SidebarProfile.vue";
 <!--        <i class="inline-flex" i="ep-moon ep-sunny" />-->
 <!--      </button>-->
 <!--    </el-menu-item>-->
+      </el-scrollbar>
   </el-menu>
 </template>
 

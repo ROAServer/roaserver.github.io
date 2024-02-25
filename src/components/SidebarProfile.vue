@@ -6,11 +6,11 @@
   <el-container direction="vertical" class="w-160px my">
     <el-image
         src="/icon/roa/ROA_icon.png"
-        class="w-f mx-a b-rounded-50% b-solid b-10px b-#333"
+        class="w-full mx-a b-rounded-50% b-solid b-10px b-#333"
         title="[ROA Logo]"
     />
 
-    <el-space direction="horizontal" class="w-f justify-between my">
+    <el-space direction="horizontal" class="w-full justify-between mt-4">
       <el-tooltip
           content="QQ 群"
       >
