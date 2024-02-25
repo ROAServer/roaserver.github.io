@@ -34,11 +34,18 @@ const mainViewWidth = computed(() =>{
  */
 const hideSidebarWidthPx: Ref<number> = ref(1000)
 
+const isSidebarHide = ref(true)
+
 const shouldSidebarHide = computed(() => {
-  return windowWidth.value <= hideSidebarWidthPx.value;
+  if (windowWidth.value <= hideSidebarWidthPx.value) {
+    isSidebarHide.value = true
+    return true
+  } else {
+    isSidebarHide.value = false
+    return false
+  }
 })
 
-const isSidebarHide = ref(shouldSidebarHide.value)
 
 window.onresize = () => {
   windowWidth.value = document.documentElement.clientWidth
@@ -88,23 +95,15 @@ function triggerHideSidebar() {
       @click="triggerHideSidebar"
   /></transition>
 
-  <el-container class="box-border">
   <div
-      v-if="!shouldSidebarHide"
-      class="w-200px h-100vh"
-  />
-
-<!--  <transition appear name="el-fade-in">-->
-  <div
-      class="ani_slide_from_left h-100vh of-y-scroll scroll-smooth"
-      :style="mainViewWidth"
+      class="ani_slide_from_left w-full h-100vh of-y-scroll scroll-smooth"
   >
 
     <homo
         id="home"
         :window-width="windowWidth"
         @get-title-width="(titleWidth: number) => {
-          hideSidebarWidthPx = titleWidth + 200
+          hideSidebarWidthPx = titleWidth + 400
         }"
     />
 
@@ -116,7 +115,6 @@ function triggerHideSidebar() {
       id="sub-servers"
     />
   </div>
-  </el-container>
 </template>
 
 <style>

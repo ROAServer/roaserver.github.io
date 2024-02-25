@@ -17,9 +17,8 @@ const TitleWidth: Ref<number> = ref(0)
 </script>
 
 <template>
-  <div id="home" class="mx-a h-100vh content-center">
+  <div ref="homoTitleDiv" id="home" class="w-70% mx-a h-100vh content-center">
     <div
-        ref="homoTitleDiv"
         class="w-fit mx-a text-left p-8 b-rounded-8 b-solid b-1 b-#5555 bg-blur"
     >
       <!-- 用于提供 @load -->
@@ -27,7 +26,7 @@ const TitleWidth: Ref<number> = ref(0)
         v-show="false"
         @load="() => {
           $emit('getTitleWidth', homoTitleDiv.offsetWidth + 50);
-          TitleWidth = homoTitleDiv.offsetWidth + 50
+          TitleWidth = homoTitleDiv.offsetWidth
         }"
       />
       <!--/ 用于提供 @load -->
@@ -46,7 +45,7 @@ const TitleWidth: Ref<number> = ref(0)
 <style scoped>
 .title {
   font-weight: 700;
-  font-size: clamp(0.5rem, -0.125rem + 5vw, 3rem);
+  font-size: clamp(0.5rem, -0.409rem + 4.55vw, 3rem);
   color: #fff
 }
 
