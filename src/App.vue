@@ -19,17 +19,6 @@ const windowWidth = ref(document.documentElement.clientWidth)
 const  windowHeight = ref(document.documentElement.clientHeight)
 
 /**
- * 主页面宽度
- */
-const mainViewWidth = computed(() =>{
-  let widthPx = windowWidth.value
-  if (!shouldSidebarHide.value) {
-    widthPx -= 200
-  }
-  return "width: " + widthPx + "px"
-})
-
-/**
  * 应该收起侧边栏的页面宽度
  */
 const hideSidebarWidthPx: Ref<number> = ref(1000)

@@ -25,7 +25,7 @@ const TitleWidth: Ref<number> = ref(0)
       <iframe
         v-show="false"
         @load="() => {
-          $emit('getTitleWidth', homoTitleDiv.offsetWidth + 50);
+          $emit('getTitleWidth', homoTitleDiv.offsetWidth);
           TitleWidth = homoTitleDiv.offsetWidth
         }"
       />
