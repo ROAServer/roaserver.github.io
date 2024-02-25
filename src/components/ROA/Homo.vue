@@ -20,7 +20,7 @@ const TitleWidth: Ref<number> = ref(0)
   <div id="home" class="mx-a h-100vh content-center">
     <div
         ref="homoTitleDiv"
-        class="w-fit mx-a text-left p-8 b-rounded-8 bg-blur"
+        class="w-fit mx-a text-left p-8 b-rounded-8 b-solid b-1 b-#5555 bg-blur"
     >
       <!-- 用于提供 @load -->
       <iframe

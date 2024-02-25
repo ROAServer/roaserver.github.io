@@ -6,7 +6,7 @@ import {Menu} from "@element-plus/icons-vue";
 
 import sidebar from "~/components/Sidebar.vue";
 
-import {Homo, AmongUs} from "~/components/ROA/ROA";
+import {Homo, AmongUs, SubService} from "~/components/ROA/ROA";
 
 /**
  * 页面宽度
@@ -110,6 +110,10 @@ function triggerHideSidebar() {
 
     <among-us
         id="about-us"
+    />
+
+    <sub-service
+      id="sub-servers"
     />
   </div>
   </el-container>

@@ -31,5 +31,6 @@ declare module 'vue' {
     Sidebar: typeof import('./components/Sidebar.vue')['default']
     SideBar: typeof import('./components/SideBar.vue')['default']
     SidebarProfile: typeof import('./components/SidebarProfile.vue')['default']
+    SubService: typeof import('./components/ROA/SubService.vue')['default']
   }
 }

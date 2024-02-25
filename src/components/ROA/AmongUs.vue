@@ -5,7 +5,7 @@ import {ArrowRightBold} from "@element-plus/icons-vue";
 
 <template>
   <div
-      class="min-w-300px w-70% max-w-1000px h-fix mx-a my-5 p-5 b-rounded-10 bg-blur"
+      class="min-w-300px w-70% max-w-1000px h-fix mx-a my-5 p-10 b-rounded-10  b-solid b-1 b-#555 bg-blur"
   >
     <el-text
         type="primary"

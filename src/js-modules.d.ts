@@ -1,1 +1,1 @@
-declare module 'vue-typed-js';
+declare module 'vue3-count-to';

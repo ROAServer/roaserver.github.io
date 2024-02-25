@@ -15,7 +15,8 @@
     "element-plus": "^2.3.12",
     "unplugin-icons": "^0.18.5",
     "vue": "^3.3.4",
-    "vue-typed-js": "^0.1.2"
+    "vue-typed-js": "^0.1.2",
+    "vue3-count-to": "^1.1.2"
   },
   "devDependencies": {
     "@iconify-json/ep": "^1.1.12",
