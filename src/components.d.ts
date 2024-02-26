@@ -26,6 +26,8 @@ declare module 'vue' {
     ElSubMenu: typeof import('element-plus/es')['ElSubMenu']
     ElTe: typeof import('element-plus/es')['ElTe']
     ElText: typeof import('element-plus/es')['ElText']
+    ElTimeline: typeof import('element-plus/es')['ElTimeline']
+    ElTimelineItem: typeof import('element-plus/es')['ElTimelineItem']
     ElTooltip: typeof import('element-plus/es')['ElTooltip']
     HiStory: typeof import('./components/ROA/HiStory.vue')['default']
     Homo: typeof import('./components/ROA/Homo.vue')['default']

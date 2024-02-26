@@ -33,19 +33,19 @@ align-items: stretch;
     >
 
     <el-card
-        class="min-w-200px w-30% mt h-full"
+        class="min-w-200px w-30% mt h-full b-rounded-5"
         body-class="p-0"
     >
       <img src="/image/ROA_mirror.png" alt="[ROA Logo]" class="w-full" />
     </el-card>
 
-    <el-card class="min-w-250px w-66% mt h-full">
+    <el-card class="min-w-250px w-66% mt h-full b-rounded-5">
       <template #header>
         <el-text tag="h2" type="primary">
           元点服务器简介
         </el-text>
 
-        <el-text tag="p" class="italic mt-3 indent-2em">
+        <el-text tag="p" class="italic mt-3 indent-2em line-height-1.5em">
           一个致力于以科学（生电）技术为核心，发展生产力,并以此来建设成一个生产力高度发展，科技水平持续进步，劳动生产率空前提高，劳动时间大大缩短，产品极大丰富的环境的综合性服务器。
         </el-text>
       </template>
@@ -121,19 +121,19 @@ justify-content: space-between;
       </div>
 
       <template #footer>
-        <p class="indent-2em">
+        <p class="indent-2em my-0.5em line-height-1.5em">
           元点服务器具有内外服制度。
         </p>
 
-        <p class="indent-2em">
+        <p class="indent-2em my-0.5em line-height-1.5em">
           区分开内外服的不是金钱与关系，而是品格与能力！
         </p>
 
-        <p class="indent-2em">
+        <p class="indent-2em my-0.5em line-height-1.5em">
           玩家可以在加入审核群接受审核并通过后进入外服。在进入外服三天后，可以申请进入内服。这时，如果这三天里你在外服的表现与风评良好，且在内服审核试题获得的成绩优异，那么恭喜，你从这一刻起就是内服成员了。
         </p>
 
-        <p class="indent-2em">
+        <p class="indent-2em my-0.5em line-height-1.5em">
           不过，内服成员并不意味着更多特权，而是意味着更多的责任与权利。这二者是对立统一的。
         </p>
       </template>

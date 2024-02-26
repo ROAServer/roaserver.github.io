@@ -51,7 +51,7 @@ const sidebarList = [
     {
     name: 'history',
     icon: 'history',
-    title: '历史',
+    title: '历史发展',
     enable: true
   },
   {
@@ -82,7 +82,7 @@ const sidebarList = [
   {
     name: 'donate',
     icon: 'volunteer_activism',
-    title: '捐助服务器',
+    title: '捐助我们',
     enable: true
   }
 ]
@@ -153,11 +153,11 @@ function triggerHideSidebar() {
     />
 
     <sub-service
-      id="sub-servers"
+        id="sub-servers"
     />
 
     <hi-story
-      id="history"
+        id="history"
     />
 
   </div>
