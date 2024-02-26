@@ -27,6 +27,7 @@ declare module 'vue' {
     ElTe: typeof import('element-plus/es')['ElTe']
     ElText: typeof import('element-plus/es')['ElText']
     ElTooltip: typeof import('element-plus/es')['ElTooltip']
+    HiStory: typeof import('./components/ROA/HiStory.vue')['default']
     Homo: typeof import('./components/ROA/Homo.vue')['default']
     Sidebar: typeof import('./components/Sidebar.vue')['default']
     SideBar: typeof import('./components/SideBar.vue')['default']

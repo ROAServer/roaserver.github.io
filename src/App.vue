@@ -6,7 +6,7 @@ import {Menu} from "@element-plus/icons-vue";
 
 import sidebar from "~/components/Sidebar.vue";
 
-import {Homo, AmongUs, SubService} from "~/components/ROA/ROA";
+import {Homo, AmongUs, SubService, HiStory} from "~/components/ROA/ROA";
 
 /**
  * 页面宽度
@@ -35,6 +35,57 @@ const shouldSidebarHide = computed(() => {
   }
 })
 
+const sidebarList = [
+  {
+    name: 'home',
+    icon: 'home',
+    title: '主页',
+    enable: true
+  },
+  {
+    name: 'about-us',
+    icon: 'person',
+    title: '关于我们',
+    enable: true
+  },
+    {
+    name: 'history',
+    icon: 'history',
+    title: '历史',
+    enable: true
+  },
+  {
+    name: 'gallery',
+    icon: 'image',
+    title: '精彩截图',
+    enable: true
+  },
+  {
+    name: 'map',
+    icon: 'map',
+    title: '在线地图',
+    enable: false,
+    message: "计划中(s∞n)"
+  },
+  {
+    name: 'download',
+    icon: 'download',
+    title: '资源下载',
+    enable: true
+  },
+  {
+    name: 'friend',
+    icon: 'star',
+    title: '友情链接',
+    enable: true
+  },
+  {
+    name: 'donate',
+    icon: 'volunteer_activism',
+    title: '捐助服务器',
+    enable: true
+  }
+]
 
 window.onresize = () => {
   windowWidth.value = document.documentElement.clientWidth
@@ -71,6 +122,7 @@ function triggerHideSidebar() {
 
   <transition appear name="slide-in-left">
   <sidebar
+      :targets-list="sidebarList"
       v-show="(!shouldSidebarHide || !isSidebarHide)"
       :window-width="windowWidth"
       class="fixed z-2 h-100vh w-200px"
@@ -103,6 +155,11 @@ function triggerHideSidebar() {
     <sub-service
       id="sub-servers"
     />
+
+    <hi-story
+      id="history"
+    />
+
   </div>
 </template>
 
