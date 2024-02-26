@@ -1,5 +1,9 @@
 <script setup lang="ts">
+import {ref} from 'vue'
+
 import {RoaHistory} from "~/components/ROA/contents";
+
+const History = ref(RoaHistory)
 
 function getDateNow() {
   const now = new Date();
@@ -50,8 +54,9 @@ function getDateNow() {
 
   <el-timeline class="mt-8">
     <el-timeline-item
-      v-for="item in RoaHistory"
+      v-for="item in History"
       :type="item.type"
+      :center="item.type === 'primary'"
       :size="item.type === 'primary' ? 'large' : 'normal'"
       :timestamp="item.type === 'primary' ? '' : item.timestamp"
       placement="top"
@@ -60,7 +65,7 @@ function getDateNow() {
           v-if="item.type === 'primary'"
           type="primary"
           tag="h2"
-          class="px-3 w-fit mb-4"
+          class="mb-1.5"
       >
         {{ item.content }}
       </el-text>
@@ -86,9 +91,11 @@ function getDateNow() {
               </template>
 
               <template v-else>
-                <a :href="item.href">
-                  {{ item.text }}
-                </a>
+                <el-tooltip :content="item.describe?item.describe:item.text">
+                  <a :href="item.href" target="_blank">
+                    {{ item.text }}
+                  </a>
+                </el-tooltip>
               </template>
             </template>
 
@@ -119,7 +126,7 @@ function getDateNow() {
 }
 
 a {
-  border-bottom: 1px dotted var(--el-color-primary);
+  border-bottom: 2px dotted var(--el-color-primary);
 }
 
 a:hover {
