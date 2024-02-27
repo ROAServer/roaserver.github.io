@@ -1,12 +1,11 @@
 <script setup lang="ts">
-
 import {computed, ref, Ref} from "vue";
 
 import {Menu} from "@element-plus/icons-vue";
 
 import {Sidebar} from "~/components/Sidebar/Sidebar";
-
-import {Homo, AmongUs, SubService, HiStory, Gallery} from "~/components/ROA/ROA";
+import {Homo, AmongUs, SubService, HiStory, Gallery, Friend} from "~/components/ROA/ROA";
+import {Footer} from "~/components/Foot/Foot";
 
 /**
  * 页面宽度
@@ -67,24 +66,24 @@ const sidebarList = [
     enable: false,
     message: "计划中(s∞n)"
   },
-  {
-    name: 'download',
-    icon: 'download',
-    title: '资源下载',
-    enable: true
-  },
+  // {
+  //   name: 'download',
+  //   icon: 'download',
+  //   title: '资源下载',
+  //   enable: true
+  // },
   {
     name: 'friend',
     icon: 'star',
     title: '友情链接',
     enable: true
   },
-  {
-    name: 'donate',
-    icon: 'volunteer_activism',
-    title: '捐助我们',
-    enable: true
-  }
+  // {
+  //   name: 'donate',
+  //   icon: 'volunteer_activism',
+  //   title: '捐助我们',
+  //   enable: true
+  // }
 ]
 
 window.onresize = () => {
@@ -162,6 +161,14 @@ function triggerHideSidebar() {
 
     <gallery
       id="gallery"
+    />
+
+    <friend
+      id="friend"
+    />
+
+    <foot
+      :class="shouldSidebarHide ? '' : 'ml-200px'"
     />
 
   </div>
