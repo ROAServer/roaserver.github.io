@@ -1,6 +1,7 @@
-import Homo from "~/components/ROA/Homo.vue";
-import AmongUs from "~/components/ROA/AmongUs.vue";
-import SubService from "~/components/ROA/SubService.vue";
-import HiStory from "~/components/ROA/HiStory.vue";
+import Homo from "./Homo.vue";
+import AmongUs from "./AmongUs.vue";
+import SubService from "./SubService.vue";
+import HiStory from "./HiStory.vue";
+import Gallery from "./Gallery.vue";
 
-export {Homo, AmongUs, SubService, HiStory}
+export {Homo, AmongUs, SubService, HiStory, Gallery}

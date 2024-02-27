@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import {ref} from 'vue'
 
-import {RoaHistory} from "~/components/ROA/contents";
+import {RoaHistory} from "./contents/contents";
 
 const History = ref(RoaHistory)
 
@@ -48,11 +48,11 @@ function getDateNow() {
     我们所要追寻的，就是这个元点，万物之由——
   </el-text>
   <br>
-  <el-text tag="p" class="indent-2em italic font-bold font-size-24px">
+  <el-text tag="p" class="italic font-bold font-size-24px">
     The [Result Of All]
   </el-text>
 
-  <el-timeline class="mt-8">
+  <el-timeline class="mt-8 p-0">
     <el-timeline-item
       v-for="item in History"
       :type="item.type"
@@ -80,7 +80,7 @@ function getDateNow() {
         </el-text>
 
         <template v-for="line in item.content">
-          <el-text size="large" tag="p" class="indent-2em mt-0.5em px-1em line-height-1.5em">
+          <el-text size="large" tag="p" class="indent-2em mt-0.5em line-height-1.5em">
             <template v-if="typeof line === 'string'">
               {{ line }}
             </template>

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import SidebarProfile from "~/components/SidebarProfile.vue";
+import SidebarProfile from "./SidebarProfile.vue";
 
 defineProps<{
   targetsList: {

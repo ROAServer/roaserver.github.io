@@ -4,9 +4,9 @@ import {computed, ref, Ref} from "vue";
 
 import {Menu} from "@element-plus/icons-vue";
 
-import sidebar from "~/components/Sidebar.vue";
+import {Sidebar} from "~/components/Sidebar/Sidebar";
 
-import {Homo, AmongUs, SubService, HiStory} from "~/components/ROA/ROA";
+import {Homo, AmongUs, SubService, HiStory, Gallery} from "~/components/ROA/ROA";
 
 /**
  * 页面宽度
@@ -102,7 +102,7 @@ function triggerHideSidebar() {
 <template>
   <transition appear name="el-fade-in">
   <el-image
-      src="/image/ROA_NewYear.jpg"
+      src="https://s11.ax1x.com/2022/04/14/LQlX4S.png"
       class="fixed h-100vh w-100vw z--1"
       fit="cover"
       title="[background image]"
@@ -158,6 +158,10 @@ function triggerHideSidebar() {
 
     <hi-story
         id="history"
+    />
+
+    <gallery
+      id="gallery"
     />
 
   </div>

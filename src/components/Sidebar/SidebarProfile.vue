@@ -5,7 +5,7 @@
 <template>
   <el-container direction="vertical" class="w-160px my">
     <el-image
-        src="/icon/roa/ROA_icon.png"
+        src="https://s11.ax1x.com/2024/02/27/pFdnyOH.png"
         class="w-full mx-a b-rounded-50% b-solid b-10px b-#333"
         title="[ROA Logo]"
     />
