@@ -1,5 +1,4 @@
 <script setup lang="ts">
-
 </script>
 
 <template>
@@ -35,4 +34,5 @@ a:hover {
   color: var(--el-color-primary);
   border-bottom: 2px dotted var(--el-color-primary);
 }
+
 </style>

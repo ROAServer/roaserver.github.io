@@ -1,5 +1,4 @@
 <script setup lang="ts">
-
 import {ArrowRightBold} from "@element-plus/icons-vue";
 </script>
 

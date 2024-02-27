@@ -1,5 +1,4 @@
 <script setup lang="ts">
-
 import {Ref, ref} from "vue";
 
 defineProps<{
@@ -53,4 +52,5 @@ const TitleWidth: Ref<number> = ref(0)
   font-size: 32px;
   color: #fff;
 }
+
 </style>
