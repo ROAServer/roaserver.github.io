@@ -4,7 +4,7 @@ import {computed, ref, Ref} from "vue";
 import {Menu} from "@element-plus/icons-vue";
 
 import {Sidebar} from "~/components/Sidebar/Sidebar";
-import {Homo, AmongUs, SubService, HiStory, Gallery, Friend} from "~/components/ROA/ROA";
+import {Homo, AmongUs, SubService, HiStory, Gallery, Friend, Donate} from "~/components/ROA/ROA";
 import {Footer} from "~/components/Foot/Foot";
 
 /**
@@ -78,12 +78,12 @@ const sidebarList = [
     title: '友情链接',
     enable: true
   },
-  // {
-  //   name: 'donate',
-  //   icon: 'volunteer_activism',
-  //   title: '捐助我们',
-  //   enable: true
-  // }
+  {
+    name: 'donate',
+    icon: 'volunteer_activism',
+    title: '捐助我们',
+    enable: true
+  }
 ]
 
 window.onresize = () => {
@@ -165,6 +165,10 @@ function triggerHideSidebar() {
 
     <friend
       id="friend"
+    />
+
+    <donate
+      id="donate"
     />
 
     <foot
