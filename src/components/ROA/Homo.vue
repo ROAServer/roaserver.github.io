@@ -16,7 +16,7 @@ const TitleWidth: Ref<number> = ref(0)
 </script>
 
 <template>
-  <div ref="homoTitleDiv" id="home" class="w-70% mx-a h-100vh content-center">
+  <div ref="homoTitleDiv" id="home" class="w-70% mx-a h-100vh content-center grid">
     <div
         class="w-fit mx-a text-left p-8 b-rounded-8 b-solid b-1 b-#5555 bg-blur"
     >
