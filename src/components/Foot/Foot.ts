@@ -1,3 +1,3 @@
-import Footer from './Foot.vue'
+import Foot from './Foot.vue'
 
-export {Footer}
+export {Foot}
