@@ -14,7 +14,7 @@
   </el-text>
 
   <div class="w-90% mx-a mt-8">
-    <img src="/public/images/捐助-小.jpg" class="w-full"/>
+    <img src="/images/donate.jpg" class="w-full"/>
   </div>
 </div>
 </template>
