@@ -4,7 +4,7 @@ import {computed, ref, Ref} from "vue";
 import {Menu} from "@element-plus/icons-vue";
 
 import {Sidebar} from "~/components/Sidebar/Sidebar";
-import {Homo, AmongUs, SubService, HiStory, Gallery, Friend, Donate} from "~/components/ROA/ROA";
+import {Homo, AmongUs, SubService, News, HiStory, Gallery, Friend, Donate} from "~/components/ROA/ROA";
 import {Foot} from "~/components/Foot/Foot";
 
 /**
@@ -47,7 +47,13 @@ const sidebarList = [
     title: '关于我们',
     enable: true
   },
-    {
+  {
+    name: 'news',
+    icon: 'news',
+    title: '最近动态',
+    enable: true
+  },
+  {
     name: 'history',
     icon: 'history',
     title: '历史发展',
@@ -153,6 +159,10 @@ function triggerHideSidebar() {
 
     <sub-service
         id="sub-servers"
+    />
+
+    <news
+      id="news"
     />
 
     <hi-story

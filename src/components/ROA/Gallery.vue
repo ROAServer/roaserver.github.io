@@ -4,7 +4,7 @@ import {Ref, ref} from "vue";
 import {ImageTagList, GalleryImages} from "./contents/contents";
 import {ImageTag} from "./contents/Gallery";
 
-const TagChoose: Ref<ImageTag | 'All'> = ref('All')
+const TagChoose: Ref<ImageTag | '所有'> = ref('所有')
 
 </script>
 
@@ -23,9 +23,9 @@ const TagChoose: Ref<ImageTag | 'All'> = ref('All')
   <div class="w-fit mx-a">
     <el-button-group>
       <el-button
-        @click="TagChoose = 'All'"
+        @click="TagChoose = '所有'"
       >
-        All
+        所有
       </el-button>
 
       <el-button
@@ -44,7 +44,7 @@ const TagChoose: Ref<ImageTag | 'All'> = ref('All')
     class="pt-4"
   >
     <el-card
-      v-show="TagChoose === 'All' || image.tags.indexOf(TagChoose) !== -1"
+      v-show="TagChoose === '所有' || image.tags.indexOf(TagChoose) !== -1"
       v-for="image in GalleryImages"
       class="w-300px m-1"
       :body-style="{padding: '0px'}"

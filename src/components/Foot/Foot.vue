@@ -11,9 +11,14 @@
   </el-text>
 
   <el-text type="info" tag="p" class="mt-2">
-    Designed via
+    Made by
+    <img src="https://avatars.githubusercontent.com/u/152780231" alt="[猫]" class="w-24px" />
+    with
+    <el-text size="large">🍥</el-text>
   </el-text>
-  <el-text type="info" tag="p" class="mt-2 indent-2em">
+
+  <el-text type="info" tag="p" class="mt-2">
+    Designed via
     <a href="https://cn.vitejs.dev/" target="_blank" class="font-bold italic">
       Vite
     </a>
@@ -25,6 +30,8 @@
     <a href="https://element-plus.org/zh-CN/" target="_blank" class="font-bold italic">
       Element-Plus
     </a>
+  </el-text>
+  <el-text type="info" tag="p" class="mt-2 indent-2em">
   </el-text>
 </div>
 </template>

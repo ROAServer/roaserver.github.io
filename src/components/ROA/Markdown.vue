@@ -6,14 +6,26 @@ const props = defineProps<{
   href: string
 }>()
 
+const loaded = ref(false)
+const loading = ref(true)
+const failed = ref(false)
+
 const h = ref()
 
 const getAndLoadMarkdownFromURL = () => {
+  loading.value = true
   const xhr = new XMLHttpRequest()
   xhr.open('GET', props.href)
   xhr.send()
+  xhr.onerror = () => {
+    console.log('F')
+    failed.value = true
+    loading.value = false
+  }
   xhr.onload = () => {
     h.value = marked(xhr.responseText)
+    loaded.value = true
+    loading.value = false
   }
 }
 
@@ -22,20 +34,58 @@ getAndLoadMarkdownFromURL()
 </script>
 
 <template>
-  <div v-html="h" class="b b-black b-solid"></div>
+  <div v-show="failed">
+    <el-result
+      icon="error"
+      title="加载失败"
+    >
+      <template #extra>
+        <el-button
+            type="primary"
+            @click="getAndLoadMarkdownFromURL"
+            :loading="loading">
+          重试
+        </el-button>
+      </template>
+    </el-result>
+  </div>
+
+  <div
+      v-show="loaded"
+      v-html="h"
+      class="b b-#555 b-solid b-rounded-4 p-4"
+  ></div>
 </template>
 
-<style scoped>
+<style>
+@import url('https://fonts.cdnfonts.com/css/jetbrains-mono-2');
+@import url('https://fonts.cdnfonts.com/css/jetbrains-mono');
+@import url('https://fonts.cdnfonts.com/css/noto-sans-mono');
+
+blockquote {
+  border-left: 3px solid var(--el-color-primary);
+  padding-left: 1rem;
+}
+
 pre {
   border: 1px solid #555;
   border-radius: 1rem;
   background-color: #333;
   padding: 1rem;
+  overflow-x: scroll;
+  color: #aaa;
 }
 
-pre::before {
-  content: 'code<br/>';
-  color: #555;
-  font-style: italic;
+p code {
+  background-color: #333;
+  color: #aaa;
+}
+
+pre code {
+  padding: 0 !important;
+}
+
+code,pre {
+  font-family: 'JetBrains Mono', 'Noto Sans Mono', serif !important;
 }
 </style>
