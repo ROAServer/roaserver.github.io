@@ -7,8 +7,6 @@ import {Sidebar} from "~/components/Sidebar/Sidebar";
 import {Homo, AmongUs, SubService, HiStory, Gallery, Friend, Donate} from "~/components/ROA/ROA";
 import {Foot} from "~/components/Foot/Foot";
 
-import Markdown from "~/components/Markdown.vue";
-
 /**
  * 页面宽度
  */
@@ -148,8 +146,6 @@ function triggerHideSidebar() {
           hideSidebarWidthPx = titleWidth + 400
         }"
     />
-
-    <markdown />
 
     <among-us
         id="about-us"
