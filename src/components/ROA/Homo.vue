@@ -1,34 +1,11 @@
 <script setup lang="ts">
-import {Ref, ref} from "vue";
-
-defineProps<{
-  windowWidth: number
-}>()
-
-defineEmits<{
-  getTitleWidth: [width: number]
-}>()
-
-const homoTitleDiv: Ref<HTMLInputElement | null> = null
-
-const TitleWidth: Ref<number> = ref(0)
-
 </script>
 
 <template>
-  <div ref="homoTitleDiv" id="home" class="w-70% mx-a h-100vh content-center grid">
+  <div id="home" class="w-70% mx-a h-100vh content-center grid">
     <div
         class="w-fit mx-a text-left p-8 b-rounded-8 b-solid b-1 b-#5555 bg-blur"
     >
-      <!-- 用于提供 @load -->
-      <iframe
-        v-show="false"
-        @load="() => {
-          $emit('getTitleWidth', homoTitleDiv.offsetWidth);
-          TitleWidth = homoTitleDiv.offsetWidth
-        }"
-      />
-      <!--/ 用于提供 @load -->
       <el-text class="title">
         在Minecraft中探索久违的乐趣
       </el-text>

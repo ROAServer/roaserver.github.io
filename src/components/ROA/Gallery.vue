@@ -9,9 +9,7 @@ const TagChoose: Ref<ImageTag | '所有'> = ref('所有')
 </script>
 
 <template>
-<div
-  class="min-w-300px w-70% max-w-1000px mx-a my-5 py-10 px-5 b-rounded-10 b-solid b-1 b-#555 bg-blur"
->
+  <div class="section_div">
   <el-text
       type="primary"
       tag="h1"
