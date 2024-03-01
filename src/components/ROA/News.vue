@@ -4,9 +4,7 @@ import Markdown from "./Markdown.vue";
 </script>
 
 <template>
-<div
-  class="min-w-300px w-70% max-w-1000px mx-a my-5 p-10 b-rounded-10 b-solid b-1 b-#555 bg-blur"
->
+<div class="section_div">
   <el-text
       type="primary"
       tag="h1"
