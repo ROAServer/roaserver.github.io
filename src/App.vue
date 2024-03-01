@@ -62,7 +62,7 @@ const sidebarList = [
   {
     name: 'gallery',
     icon: 'image',
-    title: '精彩截图',
+    title: '精彩图片',
     enable: true
   },
   {

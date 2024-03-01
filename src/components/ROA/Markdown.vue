@@ -53,7 +53,7 @@ getAndLoadMarkdownFromURL()
   <div
       v-show="loaded"
       v-html="h"
-      class="b b-#555 b-solid b-rounded-4 p-4"
+      class="markdown b b-#555 b-solid b-rounded-4 p-4"
   ></div>
 </template>
 
@@ -62,12 +62,12 @@ getAndLoadMarkdownFromURL()
 @import url('https://fonts.cdnfonts.com/css/jetbrains-mono');
 @import url('https://fonts.cdnfonts.com/css/noto-sans-mono');
 
-blockquote {
+.markdown blockquote {
   border-left: 3px solid var(--el-color-primary);
   padding-left: 1rem;
 }
 
-pre {
+.markdown pre {
   border: 1px solid #555;
   border-radius: 1rem;
   background-color: #333;
@@ -76,16 +76,20 @@ pre {
   color: #aaa;
 }
 
-p code {
+.markdown p code {
   background-color: #333;
   color: #aaa;
 }
 
-pre code {
+.markdown p,b,i {
+  line-height: 1.5em;
+}
+
+.markdown pre code {
   padding: 0 !important;
 }
 
-code,pre {
+.markdown code,pre {
   font-family: 'JetBrains Mono', 'Noto Sans Mono', serif !important;
 }
 </style>
