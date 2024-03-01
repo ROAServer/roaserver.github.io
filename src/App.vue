@@ -17,15 +17,11 @@ const windowWidth = ref(document.documentElement.clientWidth)
  */
 const  windowHeight = ref(document.documentElement.clientHeight)
 
-/**
- * 应该收起侧边栏的页面宽度
- */
-const hideSidebarWidthPx: Ref<number> = ref(1000)
 
 const isSidebarHide = ref(true)
 
 const shouldSidebarHide = computed(() => {
-  if (windowWidth.value <= hideSidebarWidthPx.value) {
+  if (windowWidth.value * 0.15 <= 200) {
     isSidebarHide.value = true
     return true
   } else {
@@ -148,9 +144,6 @@ function triggerHideSidebar() {
     <homo
         id="home"
         :window-width="windowWidth"
-        @get-title-width="(titleWidth: number) => {
-          hideSidebarWidthPx = titleWidth + 400
-        }"
     />
 
     <among-us

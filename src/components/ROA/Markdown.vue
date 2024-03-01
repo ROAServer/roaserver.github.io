@@ -63,8 +63,10 @@ getAndLoadMarkdownFromURL()
 @import url('https://fonts.cdnfonts.com/css/noto-sans-mono');
 
 .markdown blockquote {
-  border-left: 3px solid var(--el-color-primary);
-  padding-left: 1rem;
+  margin-right: 0;
+  margin-left: 1.4em;
+  border-left: 0.2em solid var(--el-color-primary);
+  padding-left: 0.4rem;
 }
 
 .markdown pre {
