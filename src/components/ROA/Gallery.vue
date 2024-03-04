@@ -9,11 +9,11 @@ const TagChoose: Ref<ImageTag | '所有'> = ref('所有')
 </script>
 
 <template>
-  <div class="section_div">
+  <div class="section_div px-1em">
   <el-text
       type="primary"
       tag="h1"
-      class="px-3 w-fit mx-5 mb-4 bottom-line"
+      class="px-7 w-fit mx-5 mb-4 bottom-line"
   >
     精彩截图
   </el-text>
@@ -38,8 +38,9 @@ const TagChoose: Ref<ImageTag | '所有'> = ref('所有')
 
   <el-space
     direction="horizontal"
+    :size="0"
     wrap
-    class="pt-4"
+    class="pt-4 mx-5"
   >
     <el-card
       v-show="TagChoose === '所有' || image.tags.indexOf(TagChoose) !== -1"

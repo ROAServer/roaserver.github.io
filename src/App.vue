@@ -17,7 +17,6 @@ const windowWidth = ref(document.documentElement.clientWidth)
  */
 const  windowHeight = ref(document.documentElement.clientHeight)
 
-
 const isSidebarHide = ref(true)
 
 const shouldSidebarHide = computed(() => {
@@ -88,6 +87,13 @@ const sidebarList = [
   }
 ]
 
+const sidebar_target: Ref<string> = ref(sidebarList[0].name)
+
+const main_div: Ref<HTMLElement | null> = ref(null)
+
+let last_scroll_query_time = 0
+const scroll_query_delay = 100
+
 window.onresize = () => {
   windowWidth.value = document.documentElement.clientWidth
   windowHeight.value = document.documentElement.clientHeight
@@ -124,6 +130,7 @@ function triggerHideSidebar() {
   <transition appear name="slide-in-left">
   <sidebar
       :targets-list="sidebarList"
+      :target="sidebar_target"
       v-show="(!shouldSidebarHide || !isSidebarHide)"
       :window-width="windowWidth"
       class="fixed z-2 h-100vh w-200px"
@@ -138,7 +145,44 @@ function triggerHideSidebar() {
   /></transition>
 
   <div
+      ref="main_div"
       class="ani_slide_from_left w-full h-100vh of-y-scroll scroll-smooth"
+      @scroll="()=>{
+        if (Date.now() - last_scroll_query_time < scroll_query_delay) {
+          return
+        } else {
+          last_scroll_query_time = Date.now()
+        }
+
+        const self = main_div as HTMLElement
+        const TargetList = sidebarList.map(item => item.name)
+        let target: Element | null = null
+
+        self.querySelectorAll('*').forEach(item => {
+          if (!TargetList.includes(item.id)) {
+            return
+          }
+          if (item.id === 'home') {
+            if (item.getBoundingClientRect().top <= 0 && item.children[0].getBoundingClientRect().top >= 0) {
+              if (!target || target.getBoundingClientRect().top > item.children[0].getBoundingClientRect().top) {
+                target = item
+                console.log(item.id)
+              }
+              return
+            }
+          } else if (item.getBoundingClientRect().top >= 0 && item.getBoundingClientRect().top < windowHeight/2) {
+            if (!target || target.getBoundingClientRect().top > item.children[0].getBoundingClientRect().top) {
+              target = item
+              console.log(item.id)
+            }
+            return
+          }
+        })
+
+        if (target) {
+          sidebar_target = target.id
+        }
+      }"
   >
 
     <homo

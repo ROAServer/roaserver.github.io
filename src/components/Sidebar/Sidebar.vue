@@ -8,7 +8,8 @@ defineProps<{
     icon: string
     enable: boolean
     message?: string
-  }[]
+  }[],
+  target?: string
 }>()
 
 </script>
@@ -17,7 +18,7 @@ defineProps<{
 
   <el-menu
     router
-    :default-active="targetsList[0].name"
+    :default-active="target?target:''"
     class="h-full bg-blur"
   >
     <el-scrollbar>
