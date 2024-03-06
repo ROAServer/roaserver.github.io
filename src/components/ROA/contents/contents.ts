@@ -1,5 +1,3 @@
-import {RoaHistory} from "./History";
-import {ImageTagList ,GalleryImages} from "./Gallery";
-import {FriendsList} from "./Friend";
+import {ImageTagList} from "./Gallery";
 
-export {RoaHistory, ImageTagList, GalleryImages, FriendsList}
+export {ImageTagList}

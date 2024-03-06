@@ -1,5 +1,23 @@
 <script setup lang="ts">
-import {FriendsList} from "./contents/contents";
+import {ref, Ref} from "vue";
+import {FriendInfo} from "~/components/ROA/contents/Friend";
+
+let FriendList: Ref<FriendInfo[]> = ref([])
+
+function getFriendList() {
+  const url = 'https://roa.ruogustudio.net/webROA/res/friend_link.json'
+  let xhr = new XMLHttpRequest()
+  xhr.open('get', url)
+  xhr.timeout = 3000
+  xhr.onload = () => {
+    const r = xhr.responseText
+    FriendList.value = JSON.parse(r)
+  }
+  xhr.send()
+}
+
+getFriendList()
+
 </script>
 
 <template>

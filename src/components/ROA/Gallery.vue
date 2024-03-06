@@ -1,10 +1,27 @@
 <script setup lang="ts">
 import {Ref, ref} from "vue";
 
-import {ImageTagList, GalleryImages} from "./contents/contents";
-import {ImageTag} from "./contents/Gallery";
+import {ImageTagList} from "./contents/contents";
+import {ImageTag, ImageWithTags} from "./contents/Gallery";
 
 const TagChoose: Ref<ImageTag | '所有'> = ref('所有')
+
+let GalleryImages: Ref<ImageWithTags[]> = ref([])
+
+function getGalleryImages() {
+  const url = 'https://roa.ruogustudio.net/webROA/res/gallery_images.json'
+  console.log(url)
+  let xhr = new XMLHttpRequest()
+  xhr.open('get', url)
+  xhr.timeout = 3000
+  xhr.onload = () => {
+    const r = xhr.responseText
+    GalleryImages.value = JSON.parse(r)
+  }
+  xhr.send()
+}
+
+getGalleryImages()
 
 </script>
 

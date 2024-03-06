@@ -1,9 +1,23 @@
 <script setup lang="ts">
-import {ref} from 'vue'
+import {ref, Ref} from 'vue'
 
-import {RoaHistory} from "./contents/contents";
+import {TimelineLine} from "~/components/ROA/contents/History";
 
-const History = ref(RoaHistory)
+let History: Ref<TimelineLine[]> = ref([])
+
+function getHistory() {
+  const url = 'https://roa.ruogustudio.net/webROA/res/history_timeline.json'
+  let xhr = new XMLHttpRequest()
+  xhr.open('get', url)
+  xhr.timeout = 3000
+  xhr.onload = () => {
+    const r = xhr.responseText
+    History.value = JSON.parse(r)
+  }
+  xhr.send()
+}
+
+getHistory()
 
 function getDateNow() {
   const now = new Date();
