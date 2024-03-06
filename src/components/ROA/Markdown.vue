@@ -59,6 +59,15 @@ getAndLoadMarkdownFromURL()
 
 <style>
 
+.markdown {
+  font-family: 'Noto Sans Mono', sans-serif;
+}
+
+.markdown time {
+  font-style: italic;
+  color: #aaa;
+}
+
 .markdown blockquote {
   margin-right: 0;
   margin-left: 1.4em;
