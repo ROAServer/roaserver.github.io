@@ -58,9 +58,6 @@ getAndLoadMarkdownFromURL()
 </template>
 
 <style>
-@import url('https://fonts.cdnfonts.com/css/jetbrains-mono-2');
-@import url('https://fonts.cdnfonts.com/css/jetbrains-mono');
-@import url('https://fonts.cdnfonts.com/css/noto-sans-mono');
 
 .markdown blockquote {
   margin-right: 0;

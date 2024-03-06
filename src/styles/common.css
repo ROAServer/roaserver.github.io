@@ -1,4 +1,16 @@
-@import url('https://fonts.cdnfonts.com/css/noto-sans-mono');
+@font-face {
+  font-family: 'JetBrains Mono';
+  src:
+    url("/fonts/JetBrainsMono/JetBrainsMono-Regular.woff2") format("woff2"),
+    url("/fonts/JetBrainsMono/JetBrainsMono-Italic.woff2") format("woff2"),
+    url("/fonts/JetBrainsMono/JetBrainsMono-Bold.woff2") format("woff2"),
+    url("/fonts/JetBrainsMono/JetBrainsMono-BoldItalic.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: 'Noto Sans Mono';
+  src: url("/fonts/NotoSansMono/NotoSansMonoCJKsc-VF.ttf") format("truetype");
+}
 
 .section_div {
   min-width: 300px;
