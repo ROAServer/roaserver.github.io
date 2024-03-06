@@ -20,6 +20,7 @@
 
 <style scoped>
 .title {
+  font-family: sans-serif;
   font-weight: 700;
   font-size: clamp(0.5rem, -0.409rem + 4.55vw, 3rem);
   color: #fff
