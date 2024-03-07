@@ -36,7 +36,7 @@ getFriendList()
       indicator-position="outside"
   >
     <el-carousel-item
-        v-for="friend in FriendsList"
+        v-for="friend in FriendList"
         class="b-rounded-5 h-fit"
     >
       <el-card

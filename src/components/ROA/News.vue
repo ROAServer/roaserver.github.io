@@ -14,10 +14,7 @@ import Markdown from "./Markdown.vue";
   </el-text>
 
   <a href="/news">
-    <el-button
-      disabled
-      type="primary"
-    >
+    <el-button type="primary">
       全部动态
     </el-button>
   </a>
