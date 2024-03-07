@@ -60,7 +60,7 @@ getAndLoadMarkdownFromURL()
 <style>
 
 .markdown {
-  font-family: 'Noto Sans Mono', sans-serif;
+  font-family: 'Noto Sans Mono', 'Noto Sans SC', sans-serif;
 }
 
 .markdown time {
@@ -98,6 +98,6 @@ getAndLoadMarkdownFromURL()
 }
 
 .markdown code,pre {
-  font-family: 'JetBrains Mono', 'Noto Sans Mono', serif !important;
+  font-family: 'JetBrains Mono', 'Noto Sans SC', sans-serif !important;
 }
 </style>

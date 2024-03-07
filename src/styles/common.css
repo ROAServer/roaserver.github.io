@@ -1,19 +1,7 @@
-@font-face {
-  font-family: 'JetBrains Mono';
-  src:
-    url("/fonts/JetBrainsMono/JetBrainsMono-Regular.woff2") format("woff2"),
-    url("/fonts/JetBrainsMono/JetBrainsMono-Italic.woff2") format("woff2"),
-    url("/fonts/JetBrainsMono/JetBrainsMono-Bold.woff2") format("woff2"),
-    url("/fonts/JetBrainsMono/JetBrainsMono-BoldItalic.woff2") format("woff2");
-}
 
-@font-face {
-  font-family: 'Noto Sans Mono';
-  src: url("/fonts/NotoSansMono/NotoSansMonoCJKsc-VF.ttf") format("truetype");
-}
 
 * {
-  font-family: 'Noto Sans Mono', sans-serif;
+  font-family: 'Noto Sans', 'Noto Sans SC', sans-serif;
 }
 
 .section_div {
