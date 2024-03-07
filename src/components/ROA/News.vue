@@ -13,11 +13,6 @@ import Markdown from "./Markdown.vue";
     最近动态
   </el-text>
 
-  <el-tooltip
-      content="暂不开放"
-      class="mb"
-      placement="right"
-  >
   <a href="/news">
     <el-button
       disabled
@@ -26,9 +21,8 @@ import Markdown from "./Markdown.vue";
       全部动态
     </el-button>
   </a>
-  </el-tooltip>
 
-  <div>
+  <div class="mt">
     <markdown href="https://roa.ruogustudio.net/docs/latest" />
   </div>
 </div>

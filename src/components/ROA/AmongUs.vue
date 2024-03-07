@@ -33,7 +33,7 @@ align-items: stretch;
         class="min-w-200px w-30% mt h-full b-rounded-5"
         body-class="p-0"
     >
-      <img src="https://s11.ax1x.com/2024/02/27/pFdnrlD.png" alt="[ROA Logo]" class="w-full" />
+      <img src="https://pic.imgdb.cn/item/65e9bc449f345e8d0389c075.png" alt="[ROA Logo]" class="w-full" />
     </el-card>
 
     <el-card class="min-w-250px w-66% mt h-full b-rounded-5">
