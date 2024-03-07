@@ -109,7 +109,7 @@ function triggerHideSidebar() {
 <template>
   <transition appear name="el-fade-in">
   <el-image
-      src="https://s11.ax1x.com/2022/04/14/LQlX4S.png"
+      src="https://pic.imgdb.cn/item/65e983339f345e8d03f20ff9.png"
       class="fixed h-100vh w-100vw z--1"
       fit="cover"
       title="[background image]"

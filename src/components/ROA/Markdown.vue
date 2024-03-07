@@ -68,6 +68,14 @@ getAndLoadMarkdownFromURL()
   color: #aaa;
 }
 
+.markdown img {
+  width: 100%;
+}
+
+.markdown a {
+  border-bottom: 2px dotted var(--el-color-primary);
+}
+
 .markdown blockquote {
   margin-right: 0;
   margin-left: 1.4em;
