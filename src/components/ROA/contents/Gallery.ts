@@ -1,6 +1,4 @@
-type ImageTag = '其他' | '联谊活动' | '新春活动' | '日常照片' | '风景'
-
-const ImageTagList: ImageTag[] = ['联谊活动','新春活动','日常照片','风景','其他']
+type ImageTag = string
 
 type ImageWithTags = {
   title: string,
@@ -11,4 +9,4 @@ type ImageWithTags = {
   date?: string
 }
 
-export {ImageTagList, ImageWithTags, ImageTag}
+export {ImageWithTags, ImageTag}

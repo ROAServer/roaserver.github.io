@@ -6,7 +6,7 @@ import {TimelineLine} from "~/components/ROA/contents/History";
 let History: Ref<TimelineLine[]> = ref([])
 
 function getHistory() {
-  const url = 'https://roa.ruogustudio.net/webROA/res/history_timeline.json'
+  const url = 'https://roa.ruogustudio.net/webROA/res/data/history_timeline.json'
   let xhr = new XMLHttpRequest()
   xhr.open('get', url)
   xhr.timeout = 3000
