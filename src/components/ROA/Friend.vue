@@ -5,7 +5,7 @@ import {FriendInfo} from "~/components/ROA/contents/Friend";
 let FriendList: Ref<FriendInfo[]> = ref([])
 
 function getFriendList() {
-  const url = 'https://roa.ruogustudio.net/webROA/res/friend_link.json'
+  const url = 'https://roa.ruogustudio.net/webROA/res/data/friend_link.json'
   let xhr = new XMLHttpRequest()
   xhr.open('get', url)
   xhr.timeout = 3000

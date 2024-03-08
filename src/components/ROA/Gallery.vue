@@ -1,15 +1,15 @@
 <script setup lang="ts">
 import {Ref, ref} from "vue";
 
-import {ImageTagList} from "./contents/contents";
 import {ImageTag, ImageWithTags} from "./contents/Gallery";
 
 const TagChoose: Ref<ImageTag | '所有'> = ref('所有')
 
 let GalleryImages: Ref<ImageWithTags[]> = ref([])
+let ImageTagList: Ref<ImageTag[]> = ref([])
 
 function getGalleryImages() {
-  const url = 'https://roa.ruogustudio.net/webROA/res/gallery_images.json'
+  const url = 'https://roa.ruogustudio.net/webROA/res/data/gallery_images.json'
   console.log(url)
   let xhr = new XMLHttpRequest()
   xhr.open('get', url)
@@ -21,7 +21,23 @@ function getGalleryImages() {
   xhr.send()
 }
 
+function getImageTagList() {
+  const url = 'https://roa.ruogustudio.net/webROA/res/data/gallery_tags.json'
+  console.log(url)
+  let xhr = new XMLHttpRequest()
+  xhr.open('get', url)
+  xhr.timeout = 3000
+  xhr.onload = () => {
+    const r = xhr.responseText
+    ImageTagList.value = JSON.parse(r)
+  }
+  xhr.send()
+
+}
+
 getGalleryImages()
+
+getImageTagList()
 
 </script>
 
