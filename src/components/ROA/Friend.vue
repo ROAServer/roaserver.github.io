@@ -2,7 +2,7 @@
 import {ref, Ref} from "vue";
 import {FriendInfo} from "~/components/ROA/contents/Friend";
 
-let FriendList: Ref<FriendInfo[]> = ref([])
+const FriendList: Ref<FriendInfo[]> = ref([])
 
 function getFriendList() {
   const url = 'https://roa.ruogustudio.net/webROA/res/data/friend_link.json'
@@ -25,7 +25,7 @@ getFriendList()
   <el-text
       type="primary"
       tag="h1"
-      class="px-3 w-fit mx-5 mb-4 bottom-line"
+      class="px-3 w-fit mb-4 bottom-line"
   >
     友情链接
   </el-text>

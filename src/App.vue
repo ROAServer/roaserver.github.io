@@ -3,8 +3,8 @@ import {computed, ref, Ref} from "vue";
 
 import {Menu} from "@element-plus/icons-vue";
 
-import {Sidebar} from "~/components/Sidebar/Sidebar";
-import {Homo, AmongUs, SubService, News, HiStory, Gallery, Friend, Donate} from "~/components/ROA/ROA";
+import {Sidebar, SidebarProps} from "~/components/Sidebar/Sidebar";
+import {Homo, AmongUs, SubService, News, HiStory, Gallery, ServerStatus, Friend, Donate} from "~/components/ROA/ROA";
 import {Foot} from "~/components/Foot/Foot";
 
 /**
@@ -29,36 +29,36 @@ const shouldSidebarHide = computed(() => {
   }
 })
 
-const sidebarList = [
+const sidebarList: SidebarProps = [
   {
     name: 'home',
     icon: 'home',
     title: '主页',
-    enable: true
   },
   {
     name: 'about-us',
     icon: 'person',
     title: '关于我们',
-    enable: true
   },
   {
     name: 'news',
     icon: 'news',
     title: '最近动态',
-    enable: true
   },
   {
     name: 'history',
     icon: 'history',
     title: '历史发展',
-    enable: true
   },
   {
     name: 'gallery',
     icon: 'image',
     title: '精彩图片',
-    enable: true
+  },
+  {
+    name: 'server-status',
+    icon: 'dns',
+    title: '设备状态',
   },
   {
     name: 'map',
@@ -71,19 +71,16 @@ const sidebarList = [
   //   name: 'download',
   //   icon: 'download',
   //   title: '资源下载',
-  //   enable: true
   // },
   {
     name: 'friend',
     icon: 'star',
     title: '友情链接',
-    enable: true
   },
   {
     name: 'donate',
     icon: 'volunteer_activism',
     title: '捐助我们',
-    enable: true
   }
 ]
 
@@ -142,7 +139,8 @@ function triggerHideSidebar() {
       v-show="shouldSidebarHide && !isSidebarHide"
       class="fixed z-1 w-100vw h-100vh bg-blur"
       @click="triggerHideSidebar"
-  /></transition>
+  />
+  </transition>
 
   <div
       ref="main_div"
@@ -186,16 +184,16 @@ function triggerHideSidebar() {
   >
 
     <homo
-        id="home"
-        :window-width="windowWidth"
+      id="home"
+      :window-width="windowWidth"
     />
 
     <among-us
-        id="about-us"
+      id="about-us"
     />
 
     <sub-service
-        id="sub-servers"
+      id="sub-servers"
     />
 
     <news
@@ -203,11 +201,15 @@ function triggerHideSidebar() {
     />
 
     <hi-story
-        id="history"
+      id="history"
     />
 
     <gallery
       id="gallery"
+    />
+
+    <server-status
+      id="server-status"
     />
 
     <friend

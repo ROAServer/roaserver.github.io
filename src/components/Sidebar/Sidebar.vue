@@ -1,14 +1,9 @@
 <script setup lang="ts">
 import SidebarProfile from "./SidebarProfile.vue";
+import {SidebarProps} from "~/components/Sidebar/Sidebar";
 
 defineProps<{
-  targetsList: {
-    name: string
-    title: string
-    icon: string
-    enable: boolean
-    message?: string
-  }[],
+  targetsList: SidebarProps,
   target?: string
 }>()
 
@@ -28,11 +23,11 @@ defineProps<{
 
     <template v-for="target in targetsList" :key="target.name">
       <el-tooltip
-          :content="target.enable ? target.title : target.message"
+          :content="target.message ? target.message : target.title"
           placement="right"
       >
       <a :href="'#'+target.name">
-      <el-menu-item :index="target.name" :disabled="!target.enable">
+      <el-menu-item :index="target.name" :disabled="target.enable === false">
         <span class="material-symbols-outlined">
         {{target.icon}}
         </span>

@@ -10,7 +10,6 @@ let ImageTagList: Ref<ImageTag[]> = ref([])
 
 function getGalleryImages() {
   const url = 'https://roa.ruogustudio.net/webROA/res/data/gallery_images.json'
-  console.log(url)
   let xhr = new XMLHttpRequest()
   xhr.open('get', url)
   xhr.timeout = 3000
@@ -23,7 +22,6 @@ function getGalleryImages() {
 
 function getImageTagList() {
   const url = 'https://roa.ruogustudio.net/webROA/res/data/gallery_tags.json'
-  console.log(url)
   let xhr = new XMLHttpRequest()
   xhr.open('get', url)
   xhr.timeout = 3000
@@ -46,7 +44,7 @@ getImageTagList()
   <el-text
       type="primary"
       tag="h1"
-      class="px-7 w-fit mx-5 mb-4 bottom-line"
+      class="px-3 w-fit mx-5.5 mb-4 bottom-line"
   >
     精彩截图
   </el-text>
