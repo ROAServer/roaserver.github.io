@@ -5,8 +5,10 @@ import {ComputedRef, computed, Ref, ref} from "vue";
 const totalPhysicalMemory: Ref<number> = ref(0);
 const usedPhysicalMemory: Ref<number> = ref(0);
 const logicalCpuCount: Ref<number> = ref(0);
-const systemLoadAvg: Ref<number[3]> = ref([0, 0, 0]);
+const systemLoadAvg: Ref<number[3]> = ref(0);
 const cpuTemp: Ref<number> = ref(0);
+const systemDescription: Ref<String> = ref("UNKNOWN");
+const lastUpdate: Ref<Date> = ref(new Date(0));
 
 const memoryUsagePercentage: ComputedRef<number> = computed(() => {
   return (usedPhysicalMemory.value * 100 / totalPhysicalMemory.value)
@@ -14,12 +16,12 @@ const memoryUsagePercentage: ComputedRef<number> = computed(() => {
 })
 
 const cpuUsagePercentage: ComputedRef<number> = computed(() => {
-  return (systemLoadAvg.value[0] * 100 / logicalCpuCount.value)
+  return (systemLoadAvg.value * 100 / logicalCpuCount.value)
       .toFixed(2);
 })
 
 function getServerStatus() {
-  const url = "http://119.91.248.61:14900/query/status/ruogu-server-main?fromTime=0&countLimit=1&reverse=true";
+  const url = "https://roa.ruogustudio.net/status/system";
   let xhr = new XMLHttpRequest();
   xhr.open('get', url);
   xhr.timeout = 3000;
@@ -29,11 +31,13 @@ function getServerStatus() {
       return
     }
     const r = JSON.parse(xhr.responseText)
-    totalPhysicalMemory.value = parseFloat(r.data[0].systemInfo.memoryInfo.totalPhysicalMemory);
-    usedPhysicalMemory.value = parseFloat(r.data[0].systemInfo.memoryInfo.usedPhysicalMemory);
-    logicalCpuCount.value = parseFloat(r.data[0].systemInfo.processorInfo.logicalCpuCount);
-    systemLoadAvg.value = parseFloat(r.data[0].systemInfo.systemLoadAvg);
-    cpuTemp.value = parseFloat(r.data[0].systemInfo.processorInfo.cpuTemp);
+    systemDescription.value = r.systemDescription
+    lastUpdate.value = new Date(parseInt(r.queryTimeMillis))
+    totalPhysicalMemory.value = parseInt(r.memoryTotal);
+    usedPhysicalMemory.value = parseInt(r.memoryUsed);
+    logicalCpuCount.value = parseInt(r.logicalProcessorCount);
+    systemLoadAvg.value = parseFloat(r.loadAvg[0]);
+    cpuTemp.value = parseFloat(r.processorTemperature);
   }
   xhr.onload = handel
   xhr.onerror = handel
@@ -72,7 +76,7 @@ getServerStatus()
         <el-text
           class="font-size-24px"
         >
-          {{systemLoadAvg[0]}}
+          {{systemLoadAvg}} / {{logicalCpuCount}}
         </el-text>
 
         <span class="material-symbols-outlined mx-2 ml-8">
@@ -122,6 +126,20 @@ getServerStatus()
           :percentage="memoryUsagePercentage"
           class="mt"
         />
+      </div>
+      <el-divider></el-divider>
+      <div>
+        <el-text
+          type="info"
+        >
+          {{systemDescription}}
+        </el-text>
+        <br/>
+        <el-text
+          type="info"
+        >
+          更新时间：{{ lastUpdate }}
+        </el-text>
       </div>
     </el-card>
   </div>
