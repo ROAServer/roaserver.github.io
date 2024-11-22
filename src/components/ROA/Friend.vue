@@ -4,6 +4,15 @@ import {FriendInfo} from "~/components/ROA/contents/Friend";
 
 const FriendList: Ref<FriendInfo[]> = ref([])
 
+const friendsRepoUrl: string = function (): string {
+  const isDev = import.meta.env.DEV
+  if (isDev) {
+    return 'https://raw.githubusercontent.com/ROAServer/ROAServerWebsite-Datas/refs/heads/master/friend_link/friend_link.json'
+  } else {
+    return 'https://roa.ruogustudio.net/webROA/res/data/friend_link.json'
+  }
+} ()
+
 function getFriendList() {
   const url = 'https://roa.ruogustudio.net/webROA/res/data/friend_link.json'
   let xhr = new XMLHttpRequest()

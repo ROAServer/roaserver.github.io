@@ -5,8 +5,17 @@ import {TimelineLine} from "~/components/ROA/contents/History";
 
 let History: Ref<TimelineLine[]> = ref([])
 
+const historyRepoUrl = function (): string {
+  const isDev = import.meta.env.DEV
+  if (isDev) {
+    return 'https://raw.githubusercontent.com/ROAServer/ROAServerWebsite-Datas/refs/heads/master/history/history_timeline.json'
+  } else {
+    return 'https://roa.ruogustudio.net/webROA/res/data/history_timeline.json'
+  }
+} ()
+
 function getHistory() {
-  const url = 'https://roa.ruogustudio.net/webROA/res/data/history_timeline.json'
+  const url = historyRepoUrl
   let xhr = new XMLHttpRequest()
   xhr.open('get', url)
   xhr.timeout = 3000

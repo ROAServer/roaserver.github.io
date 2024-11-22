@@ -11,13 +11,13 @@ const systemDescription: Ref<String> = ref("UNKNOWN");
 const lastUpdate: Ref<Date> = ref(new Date(0));
 
 const memoryUsagePercentage: ComputedRef<number> = computed(() => {
-  return (usedPhysicalMemory.value * 100 / totalPhysicalMemory.value)
-      .toFixed(2);
+  return Number((usedPhysicalMemory.value * 100 / totalPhysicalMemory.value)
+      .toFixed(2));
 })
 
 const cpuUsagePercentage: ComputedRef<number> = computed(() => {
-  return (systemLoadAvg.value * 100 / logicalCpuCount.value)
-      .toFixed(2);
+  return Number((systemLoadAvg.value * 100 / logicalCpuCount.value)
+      .toFixed(2));
 })
 
 function getServerStatus() {

@@ -8,8 +8,26 @@ const TagChoose: Ref<ImageTag | '所有'> = ref('所有')
 let GalleryImages: Ref<ImageWithTags[]> = ref([])
 let ImageTagList: Ref<ImageTag[]> = ref([])
 
+const galleryRepoUrl: string = function (): string {
+  const isDev = import.meta.env.DEV
+  if (isDev) {
+    return 'https://raw.githubusercontent.com/ROAServer/ROAServerWebsite-Datas/refs/heads/master/gallery/gallery_images.json'
+  } else {
+    return 'https://roa.ruogustudio.net/webROA/res/data/gallery_images.json'
+  }
+} ()
+
+const galleryTagsRepoUrl: string = function (): string {
+  const isDev = import.meta.env.DEV
+  if (isDev) {
+    return 'https://raw.githubusercontent.com/ROAServer/ROAServerWebsite-Datas/refs/heads/master/gallery/gallery_tags.json'
+  } else {
+    return 'https://roa.ruogustudio.net/webROA/res/data/gallery_tags.json'
+  }
+} ()
+
 function getGalleryImages() {
-  const url = 'https://roa.ruogustudio.net/webROA/res/data/gallery_images.json'
+  const url = galleryRepoUrl
   let xhr = new XMLHttpRequest()
   xhr.open('get', url)
   xhr.timeout = 3000
@@ -21,7 +39,7 @@ function getGalleryImages() {
 }
 
 function getImageTagList() {
-  const url = 'https://roa.ruogustudio.net/webROA/res/data/gallery_tags.json'
+  const url = galleryTagsRepoUrl
   let xhr = new XMLHttpRequest()
   xhr.open('get', url)
   xhr.timeout = 3000
