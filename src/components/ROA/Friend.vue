@@ -6,6 +6,8 @@ const FriendList: Ref<FriendInfo[]> = ref([])
 
 const friendsRepoUrl: string = function (): string {
   const isDev = import.meta.env.MODE == 'development'
+  console.log(import.meta.env.MODE)
+  console.log(isDev)
   if (isDev) {
     return 'https://raw.githubusercontent.com/ROAServer/ROAServerWebsite-Datas/refs/heads/master/friend_link/friend_link.json'
   } else {
@@ -14,9 +16,8 @@ const friendsRepoUrl: string = function (): string {
 } ()
 
 function getFriendList() {
-  const url = 'https://roa.ruogustudio.net/webROA/res/data/friend_link.json'
   let xhr = new XMLHttpRequest()
-  xhr.open('get', url)
+  xhr.open('get', friendsRepoUrl)
   xhr.timeout = 3000
   xhr.onload = () => {
     const r = xhr.responseText
