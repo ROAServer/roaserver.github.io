@@ -10,7 +10,6 @@ let ImageTagList: Ref<ImageTag[]> = ref([])
 
 const galleryRepoUrl: string = function (): string {
   const isDev = import.meta.env.MODE == 'development'
-  console.log(import.meta.env)
   if (isDev) {
     return 'https://raw.githubusercontent.com/ROAServer/ROAServerWebsite-Datas/refs/heads/master/gallery/gallery_images.json'
   } else {
@@ -19,7 +18,7 @@ const galleryRepoUrl: string = function (): string {
 } ()
 
 const galleryTagsRepoUrl: string = function (): string {
-  const isDev = import.meta.env.DEV
+  const isDev = import.meta.env.MODE == 'development'
   if (isDev) {
     return 'https://raw.githubusercontent.com/ROAServer/ROAServerWebsite-Datas/refs/heads/master/gallery/gallery_tags.json'
   } else {
