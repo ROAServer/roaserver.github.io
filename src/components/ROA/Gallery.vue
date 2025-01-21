@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import {Ref, ref} from "vue";
 
-import {ImageTag, ImageWithTags} from "./contents/Gallery";
+import {ImageTag, ImageWithTags} from "~/components/ROA/data/Gallery";
 
 const TagChoose: Ref<ImageTag | '所有'> = ref('所有')
 
@@ -9,7 +9,8 @@ let GalleryImages: Ref<ImageWithTags[]> = ref([])
 let ImageTagList: Ref<ImageTag[]> = ref([])
 
 const galleryRepoUrl: string = function (): string {
-  const isDev = import.meta.env.DEV
+  const isDev = import.meta.env.MODE == 'development'
+  console.log(import.meta.env)
   if (isDev) {
     return 'https://raw.githubusercontent.com/ROAServer/ROAServerWebsite-Datas/refs/heads/master/gallery/gallery_images.json'
   } else {

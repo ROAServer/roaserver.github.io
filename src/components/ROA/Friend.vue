@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import {ref, Ref} from "vue";
-import {FriendInfo} from "~/components/ROA/contents/Friend";
+import {FriendInfo} from "~/components/ROA/data/Friend";
 
 const FriendList: Ref<FriendInfo[]> = ref([])
 
 const friendsRepoUrl: string = function (): string {
-  const isDev = import.meta.env.DEV
+  const isDev = import.meta.env.MODE == 'development'
   if (isDev) {
     return 'https://raw.githubusercontent.com/ROAServer/ROAServerWebsite-Datas/refs/heads/master/friend_link/friend_link.json'
   } else {

@@ -1,12 +1,12 @@
 <script setup lang="ts">
 import {ref, Ref} from 'vue'
 
-import {TimelineLine} from "~/components/ROA/contents/History";
+import {TimelineLine} from "~/components/ROA/data/History";
 
 let History: Ref<TimelineLine[]> = ref([])
 
 const historyRepoUrl = function (): string {
-  const isDev = import.meta.env.DEV
+  const isDev = import.meta.env.MODE == 'development'
   if (isDev) {
     return 'https://raw.githubusercontent.com/ROAServer/ROAServerWebsite-Datas/refs/heads/master/history/history_timeline.json'
   } else {

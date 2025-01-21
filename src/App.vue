@@ -4,7 +4,7 @@ import {computed, ref, Ref} from "vue";
 import {Menu} from "@element-plus/icons-vue";
 
 import {Sidebar, SidebarProps} from "~/components/Sidebar/Sidebar";
-import {Homo, AmongUs, SubService, News, HiStory, Gallery, ServerStatus, Friend, Donate} from "~/components/ROA/ROA";
+import {Home, AmongUs, SubService, News, History, Gallery, ServerStatus, Friend, Donate} from "~/components/ROA/ROA";
 import {Foot} from "~/components/Foot/Foot";
 
 /**
@@ -183,7 +183,7 @@ function triggerHideSidebar() {
       }"
   >
 
-    <homo
+    <home
       id="home"
       :window-width="windowWidth"
     />
@@ -200,7 +200,7 @@ function triggerHideSidebar() {
       id="news"
     />
 
-    <hi-story
+    <history
       id="history"
     />
 
